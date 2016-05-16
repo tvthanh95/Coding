@@ -1,0 +1,12 @@
+
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="StrassenMMult"
+	ProjectGUID="{F8A7F039-B252-4BC9-A07E-5AD419F321FA}"
+	VCNestedProjectGUID="{A007AAF7-8861-4E89-B5FE-76936AC72191}"
+	VCNestedProjectFileName="StrassenMMult.vcproj">
+	<Configurations/>
+	<Files/>
+</VisualStudioProject>

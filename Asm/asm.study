@@ -1,0 +1,70 @@
+EAX: luu tru ket qua cua phep tin so hoc, offset
+EBX: offset, du lieu
+ECX: dung de luu bien dem, dung trong cac instruction lap chuoi hoac loop
+EDX:luu tru mot phan ket qua cua phep nhan va chia, du lieu
+EBP: luu tru dia chi.
+EDI: luu tru dia chi cua du lieu chuoi
+ESI: tuong tu.
+EIP: luu tru dia chi cua instruction tiep theo dc thuc hien
+IP dc dung trong real mode, EIP dc dung trong protected mode(386+)
+ESP:luu tru dia chi cua stack
+EFLAGS: luu tru trang thai cuar MP, dieu khien hoat dong(control)
+PF: 0 neu co 1 so le 1's, 1 neu co 1 so chan 1's
+CF:
+OF:
+SF: 1 neu negative
+segment register:
+CS: luu tru dia chi bat dau cua code segment
+DS: luu tru dia chi mo dau cua data segment
+ES: luu tru dia chi mo dau cua extra segment
+SS: luu tru dia chi bat dau cua stack segment
+
+segment size = 64K
+20bit address = segment register * 10h + offset
+trong real mode cac bo vi xu ly chi cho phep truy xuat 1MB bo nho
+CS:IP
+DS:DI,BX,SI
+ES:EI
+SS:SP,BP
+protected mode cho phep truy xuat nhieu hon 1MB bo nho
+trong protected mode, segment register khong con giu vi tri bat dau cua segment nua
+ma no se luu tru cua selector, selector se chon 1 trong cac descriptor tu descriptor table
+gia tri cua descriptor se bieu dien dia chi cua segment cung voi kich thuoc va quyen truy cap cua segment do
+cac chuong trinh chay trong real mode se chay trong protected mode 1 cach binh thuong
+diem khac biet do la cach ma segment register truy xuat bo nho
+
+selector se chon 1 trong so 8192 descriptor tu 1 trong 2 bang descriptor
+descriptor se bieu dien vi tri, kich thuoc va quyen truy cap den vi tri cua segmen
+=> segment register van se truy xuat 1 segment mot cachs gian tiep
+
+2 bang descriptor:
+-1 bang chua global descriptor dung cho tat ca cac chuong trinh
+- 1 bang con lai chua cac local descriptor thuong chi thuoc ve 1 chuong trinh
+=> tong 16384 descriptor
+  =======================================================================
+7 | (zero for 286, base for 386+, B31-B24) || (all zero for 286)        |6
+  =======================================================================
+5 |quyen truy cap          || base(B23-B16)                             |4
+  =======================================================================
+3 |			Base(B15-B0)				        |2
+  =======================================================================
+1|			Limit(L15-L0)				        |0
+  =======================================================================
+base: chi dia chi bat dau cua segment, dia chi nay la 24 bit doi voi 286
+32 bit doi voi 386+.
+segment limit:chua offset cuoi cung cua segment
+doi voi 286: gioi han 16 bit
+doi voi 386: gioi han 20 bit
+
+doi voi cac bo xu ly 386+: G bit = Granularity bit, neu G = 0 thi segment limit tu 1 den 1MB byte
+G = 1, thi limit la boi cua 4K bytes
+AV bit = available bit,  AV = 0 = not available
+D bit: xac dinh cach truy xuat register va bo nho
+D = 0, dung instruction 16 bit mode
+D = 1, dung instruction 32 bit mode
+
+segment register se dung 13 bit de chua selector, 3 bit con lai:
+bit TI: TI = 0, chon global descriptor table
+	TI = 1, chon local descriptor table
+bit RPL: xac dinh quyen truy cap, 00 quyen truy cap cao nhat, 11, quyen thap nhat
+

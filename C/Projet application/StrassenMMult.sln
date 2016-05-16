@@ -1,0 +1,25 @@
+
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "StrassenMMult", "StrassenMMult.icproj", "{F8A7F039-B252-4BC9-A07E-5AD419F321FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A7F039-B252-4BC9-A07E-5AD419F321FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8A7F039-B252-4BC9-A07E-5AD419F321FA}.Debug|Win32.Build.0 = Debug|Win32
+		{F8A7F039-B252-4BC9-A07E-5AD419F321FA}.Release|Win32.ActiveCfg = Release|Win32
+		{F8A7F039-B252-4BC9-A07E-5AD419F321FA}.Release|Win32.Build.0 = Release|Win32
+		{A007AAF7-8861-4E89-B5FE-76936AC72191}.Release|Win32.Build.0 = Release|Win32
+		{A007AAF7-8861-4E89-B5FE-76936AC72191}.Release|Win32.ActiveCfg = Release|Win32
+		{A007AAF7-8861-4E89-B5FE-76936AC72191}.Debug|Win32.Build.0 = Debug|Win32
+		{A007AAF7-8861-4E89-B5FE-76936AC72191}.Debug|Win32.ActiveCfg = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
