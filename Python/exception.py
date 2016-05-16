@@ -18,3 +18,4 @@ except ZeroDivisionError:
 	print("la variable num2 est egale a zero")
 except TypeError:
 	print("La variable num1 ou num2 possede un type incompatible avec la division") 
+# a new comment
